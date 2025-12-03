@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/signup.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <form action="/sign-up" method="post">
+        <h2>Sign up</h2>
+
+        <% if (error && error.length> 0) { %>
+            <div class="flash-error">
+                <%= error %>
+            </div>
+            <% } %>
+                <label for="firstName">Name:</label>
+                <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+                <label for="lastName">Lastname:</label>
+                <input type="text" name="lastName" id="lastName" required placeholder="Last Name">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required placeholder="Email">
+                <label for="name">Password:</label>
+                <input type="password" name="password" id="password" required placeholder="Password">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" required
+                    placeholder="Confirm Password"">
+                <button type=" submit">Sign Up</button>
+                <p class="dont">Already Have An Account? <a class="sign" href="/login"">Login Here.</a></p>
+
+
+            </form>
+</body>
+
+</html>

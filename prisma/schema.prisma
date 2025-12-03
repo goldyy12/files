@@ -1,0 +1,54 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  sid       String   @unique
+  data      Json
+  expiresAt DateTime
+}
+
+
+model User {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  firstName    String
+  lastName     String
+  passwordHash String
+  createdAt    DateTime  @default(now())
+
+  folders      Folder[]
+  files        File[]
+}
+
+model Folder {
+  id        String   @id @default(uuid())
+  name      String
+  ownerId   String
+  owner     User     @relation(fields: [ownerId], references: [id])
+  createdAt DateTime @default(now())
+
+  files     File[]
+}
+
+model File {
+  id          String   @id @default(uuid())
+  name        String
+  mimeType    String
+  sizeBytes   Int
+  storagePath String
+  uploadedAt  DateTime @default(now())
+
+  folderId    String
+  folder      Folder   @relation(fields: [folderId], references: [id])
+  ownerId     String
+  owner       User     @relation(fields: [ownerId], references: [id])
+}

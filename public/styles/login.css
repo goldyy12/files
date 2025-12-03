@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding-top: 55px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+form {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(240, 239, 239);
+    max-height: 420px;
+    width: 350px;
+    padding: 20px 30px;
+    border-radius: 14px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+
+
+
+}
+
+
+.line {
+    height: 1px;
+    background-color: #555;
+    margin-top: 15px;
+}
+
+.dont {
+
+    color: #555;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-wrap: nowrap;
+    font-size: small;
+
+}
+
+.sign {
+    padding: 0px;
+
+    display: inline;
+    color: cornflowerblue;
+    background-color: rgb(240, 239, 239);
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(240, 239, 239);
+    color: black;
+}
+
+label {
+    color: black;
+}
+
+button {
+    padding: 10px;
+    background-color: #123da9;
+    border: 0px;
+    color: white;
+    border-radius: 10px;
+}
+
+h2 {
+    color: black;
+    margin: 0 auto;
+}
+
+a {
+
+    background-color: rgb(252, 254, 254);
+    text-decoration: none;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 94.5%;
+    border-radius: 10px;
+    font-size: small;
+
+}
+
+.code {
+    color: white;
+}

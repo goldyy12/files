@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/login.css">
+
+
+</head>
+
+<body>
+
+
+
+
+
+    <form action="/login" method="post">
+        <h2>Login</h1>
+            <% if (error && error.length> 0) { %>
+                <div class="flash-error">
+                    <%= error %>
+                </div>
+                <% } %>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required placeholder="Enter Your Email">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter Your Password">
+                    <button type="submit">Log in</button>
+                    <a href="/index">Back To Home</a>
+
+
+                    <div class="line"></div>
+                    <p class="dont">Don't have an account? <a class="sign" href="/sign-up"">Sign up here.</a></p>
+
+
+
+    </form>
+</body>

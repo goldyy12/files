@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/folder.css">
+
+
+
+
+
+
+</head>
+
+<body>
+    <nav>
+        <div class="links">
+            <% if (user) { %>
+
+
+                <a href="/logout">Logout</a>
+                <% } else { %>
+                    <a href="/sign-up">Sign up</a>
+                    <a href="/login">Log in</a>
+                    <% } %>
+        </div>
+    </nav>
+
+
+
+
+
+    <% if (folders && folders.length> 0) { %>
+
+        <h1>Your Folders</h1>
+        <ul>
+            <% folders.forEach(folder=> { %>
+                <li>
+                    <a href="/folders/<%= folder.id %>">
+                        <%= folder.name %>
+                    </a>
+                </li>
+                <% }) %>
+        </ul>
+        <a href="/folders">Create a Folder</a>
+        <% } else { %>
+            <% if(user) {%>
+                <p>No folders yet</p>
+                <a href="/folders">Create a Folder</a>
+
+                <% } else { %>
+                    <p>Login to add Folders and Files</p>
+
+                    <%} %>
+                        <% } %>
+</body>
+
+</html>

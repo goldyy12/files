@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/folder.css">
+</head>
+
+<body>
+    <h1>
+        Folder name: <%= folder.name %>
+    </h1>
+    <form action="/folders/<%= folder.id %>/delete" method="POST">
+        <button type="submit">Delete Folder</button>
+    </form>
+    <a href="/folders/<%= folder.id %>/edit">
+        Edit folder
+    </a>
+    <a href="/">Back to home</a>
+
+
+
+    <h3>Files: </h3>
+
+    <% if (folder.files.length> 0) { %>
+        <ul>
+            <% folder.files.forEach(file=> { %>
+                <li>
+                    <%= file.name %>
+                        <form action="/folders/<%= folder.id %>/files/<%=file.id  %>/delete" method="POST">
+                            <button type="submit">Delete File</button>
+                        </form>
+                        <form action="/folders/<%= folder.id %>/files/<%=file.id  %>/download" method="POST">
+                            <button type="submit">Download File</button>
+                        </form>
+
+
+                        <% }) %>
+
+        </ul>
+        <a href="/folders/<%= folder.id %>/createfile">Add a file</a>
+        <% } else { %>
+            <p>No files in this folder.</p>
+            <a href="/folders/<%= folder.id %>/createfile">Add a file</a>
+            <% } %>
+
+</body>
+
+</html>
